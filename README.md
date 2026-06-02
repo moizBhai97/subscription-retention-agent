@@ -8,7 +8,7 @@ An AI-powered retention agent for subscription businesses. Upload your customer 
 
 ## What it does
 
-1. Upload a CSV of your customers — or click **Try with sample data** instantly, no API key needed
+1. Upload a CSV of your customers — or click **▶ Try sample data** instantly, no API key needed
 2. Scores every customer using a **weighted RFM model** (Recency 50%, Frequency 30%, Monetary 20%) — churn risk shown as a progress bar 0–100%
 3. Filters to only **high-risk + high-LTV** customers — the ones worth spending retention budget on (emailing everyone wastes budget and trains low-value customers to wait for discounts)
 4. One click generates a **personalised re-engagement email** per customer using Groq AI, with the agent's reasoning shown so you can review before sending
@@ -24,7 +24,13 @@ An AI-powered retention agent for subscription businesses. Upload your customer 
 2. Go to [share.streamlit.io](https://share.streamlit.io)
 3. Click **New app** → select your forked repo → set main file to `app.py`
 4. Click **Deploy** — you get a public URL in ~60 seconds
-5. Share the URL with your team. They just open it in a browser.
+5. *(Optional but recommended)* Go to your app → **Settings** → **Secrets** and add:
+```toml
+GROQ_API_KEY = "gsk_your_key_here"
+```
+This pre-fills the API key for anyone who opens the link — zero friction for your team.
+
+6. Share the URL with your team. They just open it in a browser — no install, no signup.
 
 ### Option B — Run locally
 
@@ -43,7 +49,7 @@ Your CSV needs these columns:
 |--------|---------|
 | `customer_name` | Sarah Mitchell |
 | `email` | sarah@example.com |
-| `last_purchase_date` | 2024-11-03 |
+| `last_purchase_date` | 2026-03-10 |
 | `total_orders` | 12 |
 | `total_spend` | 1840.00 |
 | `product_category` | Skincare |
