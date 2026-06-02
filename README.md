@@ -2,6 +2,8 @@
 
 An AI-powered retention agent for subscription businesses. Upload your customer list, get personalized re-engagement emails for your highest-risk, highest-value customers — in under 60 seconds.
 
+**Live demo:** [subscription-retention-agent-moiz.streamlit.app](https://subscription-retention-agent-moiz.streamlit.app)
+
 **No install required** — runs in your browser via Streamlit Cloud.
 
 ---
