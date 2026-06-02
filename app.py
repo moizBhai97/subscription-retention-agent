@@ -10,7 +10,7 @@ import io
 st.set_page_config(
     page_title="ChurnGuard — Retention Agent",
     page_icon="🛡️",
-    layout="wide"
+    layout="centered"
 )
 
 st.markdown("""
@@ -207,7 +207,7 @@ def main():
                 override_input = st.text_input(
                     "Override API Key",
                     type="password",
-                    placeholder="Paste your key here — starts with gsk_",
+                    placeholder="Paste your key here",
                     help="Replaces the configured key for this session"
                 )
                 if st.button("Save Override Key", use_container_width=True, type="primary"):
@@ -233,7 +233,7 @@ def main():
                 typed_key = st.text_input(
                     "Groq API Key",
                     type="password",
-                    placeholder="Paste your key here — starts with gsk_",
+                    placeholder="Paste your key here",
                     help="Free at console.groq.com — no credit card needed",
                     key="groq_input"
                 )
@@ -257,7 +257,7 @@ def main():
 <div style="background:#0d1117; border:1px solid #2a2d3a; border-radius:8px;
             padding:12px 14px; font-size:0.8rem; color:#9ca3b0; line-height:1.6; margin-top:10px;">
 <strong style="color:#f0f2f5;">Why Groq, not ChatGPT or Claude?</strong><br>
-Both require a paid API plan. Groq is free, same quality (Llama 3.3 70B), and faster.
+Both require a paid API plan. Groq is free (same quality), and faster.
 </div>""", unsafe_allow_html=True)
 
         st.markdown("---")
@@ -378,7 +378,8 @@ Deploy free at <a href="https://share.streamlit.io" style="color:#4a9eff;">share
     med   = len(df[df["risk_level"] == "Medium"])
     act   = len(df[(df["risk_level"].isin(["High","Medium"])) & (df["ltv_tier"] == "High")])
 
-    c1, c2, c3, c4 = st.columns(4)
+    c1, c2 = st.columns(2)
+    c3, c4 = st.columns(2)
     for col, num, lbl in [(c1, total, "Total Customers"), (c2, high, "High Risk"),
                           (c3, med, "Medium Risk"),       (c4, act, "High-Value At Risk")]:
         col.markdown(f"""
@@ -527,7 +528,7 @@ Deploy free at <a href="https://share.streamlit.io" style="color:#4a9eff;">share
 
     st.markdown("""
 <div class="footer">
-ChurnGuard · Built in 3 hours, AI-assisted · Groq + Llama 3.3 70B ·
+ChurnGuard · Built in 3 hours, AI-assisted · Groq ·
 Deploy free at <a href="https://share.streamlit.io" style="color:#4a9eff;">share.streamlit.io</a>
 </div>
 """, unsafe_allow_html=True)
